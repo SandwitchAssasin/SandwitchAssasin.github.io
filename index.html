@@ -53,23 +53,21 @@
         bounced = true;
       }
 
-      if (bounced) {
-        el.style.color = randomColor();
-      }
+
 
       x += dx;
       y += dy;
 
       el.style.left = x + "px";
       el.style.top = y + "px";
- requestAnimationFrame(randomColor);
       requestAnimationFrame(move);
     }
-randomColor();
+        el.style.color = randomColor();
     move();
   </script>
 </body>
 </html>
+
 
 
 
