@@ -44,7 +44,7 @@
       let bounced = false;
 
 
-      if (x + rect.width >= calc(winWidth / 2) || x <= 0) {
+      if (x + rect.width >= winWidth || x <= 0) {
         dx *= -1;
         bounced = true;
       }
@@ -65,10 +65,11 @@
 
       requestAnimationFrame(move);
     }
-
+randomColor();
     move();
   </script>
 </body>
 </html>
+
 
 
