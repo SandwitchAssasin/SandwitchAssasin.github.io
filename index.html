@@ -7,14 +7,12 @@
       margin: 0;
       height: 100vh;
       overflow: hidden;
-      background: black;
     }
 
     #el {
       width: 180px;
       height: 60px;
-      background: purple;
-      color: white;
+      color: purple;
       font-size: 20px;
       font-weight: bold;
       display: flex;
@@ -32,7 +30,7 @@
   <script>
     const el = document.getElementById("el");
     let x = 100, y = 100;        
-    let dx = 2, dy = 2;          
+    let dx = 3, dy = 3;          
 
     function randomColor() {
       return `hsl(${Math.floor(Math.random() * 360)}, 80%, 50%)`;
@@ -72,3 +70,4 @@
   </script>
 </body>
 </html>
+
