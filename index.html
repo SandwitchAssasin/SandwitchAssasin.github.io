@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html>
-<head></head>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: black;
+    }
+
+    #el {
+      width: 180px;
+      height: 60px;
+      background: purple;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+  </style>
+</head>
 <body>
-<canvas id = "sus" width="300" height="200" style="border:2px black"></canvas>
-<b>test</b>
+  <div id="el">SandwitchAssasin</div>
+
+  <script>
+    const el = document.getElementById("el");
+    let x = 100, y = 100;        
+    let dx = 2, dy = 2;          
+
+    function randomColor() {
+      return `hsl(${Math.floor(Math.random() * 360)}, 80%, 50%)`;
+    }
+
+    function move() {
+      const rect = el.getBoundingClientRect();
+      const winWidth = window.innerWidth;
+      const winHeight = window.innerHeight;
+
+      let bounced = false;
+
+
+      if (x + rect.width >= winWidth || x <= 0) {
+        dx *= -1;
+        bounced = true;
+      }
+      if (y + rect.height >= winHeight || y <= 0) {
+        dy *= -1;
+        bounced = true;
+      }
+
+      if (bounced) {
+        el.style.color = randomColor();
+      }
+
+      x += dx;
+      y += dy;
+
+      el.style.left = x + "px";
+      el.style.top = y + "px";
+
+      requestAnimationFrame(move);
+    }
+
+    move();
+  </script>
 </body>
-
 </html>
-
-
