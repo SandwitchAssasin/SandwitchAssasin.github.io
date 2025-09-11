@@ -53,8 +53,9 @@
         dy *= -1;
         bounced = true;
       }
-
-        el.style.color = randomColor();
+if(bounced){
+          el.style.color = randomColor();
+}
 
       x += dx;
       y += dy;
@@ -68,6 +69,7 @@
   </script>
 </body>
 </html>
+
 
 
 
