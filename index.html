@@ -53,7 +53,7 @@
         bounced = true;
       }
 
-
+        el.style.color = randomColor();
 
       x += dx;
       y += dy;
@@ -62,11 +62,12 @@
       el.style.top = y + "px";
       requestAnimationFrame(move);
     }
-        el.style.color = randomColor();
+
     move();
   </script>
 </body>
 </html>
+
 
 
 
